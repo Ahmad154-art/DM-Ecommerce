@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21.349" viewBox="0 0 20 21.349">
+  <g id="Cart-steps" transform="translate(-372.25 -156)">
+    <g id="Group_1470" data-name="Group 1470" transform="translate(2479 -848)">
+      <rect id="Rectangle_568" data-name="Rectangle 568" width="4" height="4" transform="translate(-2103 1016)" fill="#3b3937"/>
+      <rect id="Rectangle_569" data-name="Rectangle 569" width="4" height="4" rx="2" transform="translate(-2103 1011)" fill="#3b3937"/>
+      <rect id="Rectangle_570" data-name="Rectangle 570" width="4" height="4" rx="2" transform="translate(-2096 1006)" fill="#3b3937"/>
+      <rect id="Rectangle_574" data-name="Rectangle 574" width="4" height="4" rx="2" transform="translate(-2104 1004)" fill="#3b3937"/>
+      <rect id="Rectangle_575" data-name="Rectangle 575" width="4" height="4" rx="2" transform="translate(-2093 1011)" fill="#3b3937"/>
+      <rect id="Rectangle_571" data-name="Rectangle 571" width="4" height="4" rx="2" transform="translate(-2098 1016)" fill="#3b3937"/>
+      <rect id="Rectangle_572" data-name="Rectangle 572" width="4" height="4" transform="translate(-2098 1011)" fill="#3b3937"/>
+      <rect id="Rectangle_576" data-name="Rectangle 576" width="4" height="4" transform="translate(-2093 1016)" fill="#3b3937"/>
+      <rect id="Rectangle_573" data-name="Rectangle 573" width="4" height="4" transform="matrix(0.899, -0.438, 0.438, 0.899, -2101, 1007.753)" fill="#3b3937"/>
+    </g>
+    <g id="Buy" transform="translate(372.25 157.75)">
+      <path id="Stroke_1" data-name="Stroke 1" d="M.764-.75A1.515,1.515,0,1,1-.75.765,1.517,1.517,0,0,1,.764-.75Z" transform="translate(4.658 17.32)" fill="#3b3937"/>
+      <path id="Stroke_3" data-name="Stroke 3" d="M.765-.75A1.515,1.515,0,1,1-.75.765,1.517,1.517,0,0,1,.765-.75Z" transform="translate(15.91 17.32)" fill="#3b3937"/>
+      <path id="Stroke_5" data-name="Stroke 5" d="M15.752,14.236H4.84A2.552,2.552,0,0,1,2.3,11.9L1.381,1-.128.739A.75.75,0,0,1-.739-.128.75.75,0,0,1,.128-.739l2.08.36A.75.75,0,0,1,2.827.3l.235,2.8h14.1a2.091,2.091,0,0,1,2.069,2.39l-.949,6.558A2.568,2.568,0,0,1,15.752,14.236ZM3.188,4.6l.6,7.171a1.047,1.047,0,0,0,1.05.966H15.752a1.06,1.06,0,0,0,1.043-.9l.949-6.558a.591.591,0,0,0-.585-.676Z" transform="translate(0.75 0.75)" fill="#3b3937"/>
+      <path id="Stroke_7" data-name="Stroke 7" d="M2.773,1.25H0A.75.75,0,1,1,0-.25H2.773a.75.75,0,0,1,0,1.5Z" transform="translate(12.125 7.795)" fill="#3b3937"/>
+    </g>
+  </g>
+</svg>
