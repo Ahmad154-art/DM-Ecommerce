@@ -1,68 +1,49 @@
-// To parse this JSON data, do
-//
-//     final slides = slidesFromJson(jsonString);
-
 import 'dart:convert';
 
-Slides slidesFromJson(String str) => Slides.fromJson(json.decode(str));
+import 'package:flutter/cupertino.dart';
 
-String slidesToJson(Slides data) => json.encode(data.toJson());
+class Slide {
+  List<SlideModel> slides = [];
 
-class Slides {
-    Slides({
-      required  this.slides,
-    });
+  Slide({required this.slides});
 
-    List<SlideModel> slides;
+  factory Slide.fromJson(Map<String, dynamic> json) => Slide(
+    slides: List<SlideModel>.from(json["slides"].map((e) => SlideModel.fromJson(e))),
 
-    factory Slides.fromJson(Map<String, dynamic> json) => Slides(
-        slides: List<SlideModel>.from(json["slides"].map((x) => SlideModel.fromJson(x))),
-    );
-
-    Map<String, dynamic> toJson() => {
-        "slides": List<dynamic>.from(slides.map((x) => x.toJson())),
-    };
+  );
+  
 }
 
 class SlideModel {
-    SlideModel({
-     required   this.name,
-      required  this.image,
-    });
+  int id;
+  String name;
+  String image;
 
-    String name;
-    String image;
+  SlideModel({required this.id, required this.name, required this.image});
 
-    factory SlideModel.fromJson(Map<String, dynamic> json) => SlideModel(
+  factory SlideModel.fromJson(Map<String, dynamic> json) => SlideModel(
+        id: json["id"],
         name: json["name"],
         image: json["image"],
-    );
+      );
+  // SlideModel.fromJson(Map<String, dynamic> json)
+  //     : name = json["name"],
+  //       image = json["image"];
 
-    Map<String, dynamic> toJson() => {
-        "name": name,
-        "image": image,
-    };
+  Map<String, dynamic> toJson() => {"id": id, "name": name, "image": image};
 }
 
 
 
 
-// import 'dart:convert';
-
-// SlideModel slideFromJson(String str) => SlideModel.fromJson(json.decode(str));
 
 
-// class SlideModel {
-//   String image;
-//   String name;
-//   SlideModel({required this.image, required this.name});
-
-//  factory SlideModel.fromJson(Map<String , dynamic> json) => SlideModel (
-  
-//   name: json["name"],
-//   image: json["image"],
-
-// );
 
 
-// }
+
+
+
+
+
+
+

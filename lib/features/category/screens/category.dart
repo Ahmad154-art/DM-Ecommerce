@@ -48,7 +48,7 @@ class Category extends StatelessWidget {
     );
   }
 
-  // TODO: same as favourite
+  // TODO: same as favourite//*****Done */
   // Widget itemBuild(context, index) {
   //   return Column(children: [
   //     Container(

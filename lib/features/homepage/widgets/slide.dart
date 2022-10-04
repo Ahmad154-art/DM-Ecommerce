@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Slide extends StatelessWidget {
- // ImageSlideController controller = Get.put(ImageSlideController());
+  ImageSlideController controller = Get.put(ImageSlideController());
   // int? index;
   String name;
   String image;

@@ -28,7 +28,7 @@ class Show extends StatelessWidget {
       //       mainAxisAlignment: MainAxisAlignment.start,
       //       // crossAxisAlignment: CrossAxisAlignment.center,
       //       children: [
-      //         // TODO: Seperated Widget.////*****Done */
+      //         // DONE: Seperated Widget.////*****Done */
       //         Column(
       //           children: [
       //             InkWell(
@@ -107,16 +107,19 @@ class Show extends StatelessWidget {
         margin: EdgeInsets.only(top: 20),
         width: MediaQuery.of(context).size.width * 0.99,
         height: MediaQuery.of(context).size.height * 0.48,
-        child: GridView.builder(
-            itemCount:orderListController.image.length , // TODO: should be dynamic.///****done */
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              childAspectRatio: 2.5,
-              crossAxisCount: 1,
-              //  crossAxisSpacing: 1,
-              // mainAxisSpacing: 1
-            ),
+        child: ListView.builder(
+            itemCount: orderListController
+                .image.length,
+                
+              //  padding: EdgeInsets.only(bottom: 10), // TODO: should be dynamic.///****done */
+            // gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            //   childAspectRatio: 2.5,
+            //   crossAxisCount: 1,
+            //   //  crossAxisSpacing: 1,
+            //   // mainAxisSpacing: 1
+            // ),
             itemBuilder: (BuildContext ctx, index) {
-              return ProductBuy( index: index);
+              return ProductBuy(index: index);
             }),
       ),
       Padding(padding: EdgeInsets.only(top: 10)),
@@ -170,7 +173,7 @@ class Show extends StatelessWidget {
     ]);
   }
 
-  // TODO: In Seperated Widget.
+  // TODO: In Seperated Widget.//****done */
 }
 
 // class ProductBuy extends StatelessWidget {
