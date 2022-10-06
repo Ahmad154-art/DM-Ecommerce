@@ -1,4 +1,4 @@
-import 'package:ecommerce/features/homepage/contoller/imageslide.dart';
+import 'package:ecommerce/features/homepage/contoller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -17,7 +17,8 @@ class CustomNavigationBar extends StatefulWidget {
 }
 
 class _CustomNavigationBarState extends State<CustomNavigationBar> {
-  ImageSlideController controller = Get.put(ImageSlideController());
+  HomeScreenController controller = Get.put(HomeScreenController());
+  // final controller = Get.lazyPut(() => ImageSlideController());
   int selectindex = 0;
 
   List<Widget> select = [
@@ -31,6 +32,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
     setState(() {
       selectindex = index;
     });
+    //controller.slide();
   }
 
   @override
@@ -51,9 +53,6 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: InkWell(
-                  onTap: () {
-                    controller.slide();
-                  },
                   child: selectindex == 0
                       ? SvgPicture.asset(
                           'icons/Home-fill.svg',

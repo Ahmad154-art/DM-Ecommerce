@@ -1,5 +1,6 @@
 import 'component/navigationbar.dart';
 
+import 'features/cart/screens/finishing.dart';
 import 'features/favorite/screens/favorite.dart';
 import 'features/homepage/screens/home.dart';
 import 'features/homepage/screens/product_detail.dart';
@@ -38,7 +39,9 @@ class MyApp extends StatelessWidget {
          GetPage(name: '/splash', page: ()=>SplashScreen()),
          GetPage(name: '/home', page: ()=>Home()),
         GetPage(name: '/favorite', page: ()=>Favorite()),
-         GetPage(name: '/product_detail', page: ()=>ProductDetail())
+         GetPage(name: '/product_detail', page: ()=>ProductDetail()),
+         GetPage(name: '/finishing_the_order', page: ()=>FinishingTheOrder()),
+         GetPage(name: '/navigation_bar', page: ()=>CustomNavigationBar()),
       ],
     );
   }

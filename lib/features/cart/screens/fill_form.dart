@@ -1,3 +1,4 @@
+import 'package:ecommerce/features/cart/screens/finishing.dart';
 import 'package:ecommerce/features/cart/widget/fill_form.dart';
 
 import '../../../component/drawer.dart';
@@ -7,160 +8,68 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
+import '../widget/text_field.dart';
+
 class FillForm extends StatelessWidget {
-  // CartController cartController = Get.put(CartController());
+  CartController controller = Get.put(CartController());
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      FillFormWidget(),
-      // Container(
-      //   width: double.infinity,
-      //   color: Colors.transparent,
-      //   child: Padding(
-      //     padding: EdgeInsets.only(left: 30, top: 20),
-      //     child: Row(
-      //       mainAxisAlignment: MainAxisAlignment.start,
-      //       // crossAxisAlignment: CrossAxisAlignment.center,
-      //       children: [
-      //         Column(
-      //           children: [
-      //             GetBuilder<CartController>(
-      //                 init: CartController(),
-      //                 builder: (controller) {
-      //                   return InkWell(
-      //                     onTap: () {
-      //                       controller.onTap();
-      //                     },
-      //                     child: SvgPicture.asset(
-      //                       'icons/Buy.svg',
-      //                       color: Color(0xffEB671B),
-      //                     ),
-      //                   );
-      //                 }),
-      //             Padding(padding: EdgeInsets.only(top: 3)),
-      //             Text('Orders list',
-      //                 style: TextStyle(color: Color(0xffEB671B)))
-      //           ],
-      //         ),
-      //         Container(
-      //           margin: EdgeInsets.only(bottom: 20, left: 10, right: 10),
-      //           width: 50,
-      //           height: 3,
-      //           color: Color(0xffEB671B),
-      //         ),
-      //         Column(
-      //           children: [
-      //             InkWell(
-      //               child: SvgPicture.asset(
-      //                 'icons/Document.svg', color: Color(0xffEB671B),
-      //                 // color: Color(0xffEB671B),
-      //               ),
-      //             ),
-      //             Padding(padding: EdgeInsets.only(top: 3)),
-      //             Text(
-      //               'Fill Form',
-      //               style: TextStyle(
-      //                 color: Color(0xffEB671B),
-      //               ),
-      //             )
-      //           ],
-      //         ),
-      //         Container(
-      //           margin: EdgeInsets.only(bottom: 20, left: 10, right: 10),
-      //           width: 50,
-      //           height: 3,
-      //           color: Color(0xffEB671B),
-      //         ),
-      //         Column(
-      //           children: [
-      //             GetBuilder<CartController>(
-      //                 init: CartController(),
-      //                 builder: (controller) {
-      //                   return InkWell(
-      //                     onTap: () {
-      //                       controller.onClick();
-      //                     },
-      //                     child: SvgPicture.asset(
-      //                       'icons/Cart-steps.svg', color: Colors.black38,
-      //                       // color: Color(0xffEB671B),
-      //                     ),
-      //                   );
-      //                 }),
-      //             Padding(padding: EdgeInsets.only(top: 3)),
-      //             Text(
-      //               'Finishing',
-      //               style: TextStyle(
-      //                 color: Colors.black38,
-      //               ),
-      //             ),
-      //             Text(
-      //               'the order',
-      //               style: TextStyle(
-      //                 color: Colors.black38,
-      //               ),
-      //             )
-      //           ],
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      // ),
-      SizedBox(height: 20,),
-      Container(
-                  
-                  height: 35,
-                  width: 275,
-                  decoration: const BoxDecoration(
-                      //  borderRadius: BorderRadius.circular(10),
-                      color: Colors.white),
-                  child: TextFormField(
-                    keyboardType: TextInputType.text,
-                  //  onChanged: (value) {},
-                    decoration: const InputDecoration(
-                        border: InputBorder.none,
-                       // prefixIcon: 'Name:'
-                        
-                        
-                            ),
-                  ),
-                ),
-                Container(
-                  
-                   margin: EdgeInsets.only(top: 20),
-                  
-                  height: 35,
-                  width: 275,
-                  decoration: const BoxDecoration(
-                      //  borderRadius: BorderRadius.circular(10),
-                      color: Colors.white),
-                  child: TextFormField(
-                    
-                    keyboardType: TextInputType.text,
-                    onChanged: (value) {},
-                    decoration:const InputDecoration(
-                        border: InputBorder.none,
-                        
-                        
-                            ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 20),
-                  
-                  height: 35,
-                  width: 275,
-                  decoration: const BoxDecoration(
-                      //  borderRadius: BorderRadius.circular(10),
-                      color: Colors.white),
-                  child: TextFormField(
-                    keyboardType: TextInputType.text,
-                    onChanged: (value) {},
-                    decoration:const InputDecoration(
-                        border: InputBorder.none,
-                        
-                            ),
-                  ),
-                ),
-    ]);
+    return SingleChildScrollView(
+      child: Column(mainAxisSize: MainAxisSize.min, children: [
+        FillFormWidget(),
+        const SizedBox(
+          height: 20,
+        ),
+        TextFieldWidget(
+          text: 'Name:',
+          type: TextInputType.text,
+        ),
+        const Padding(padding: EdgeInsets.only(top: 10)),
+        TextFieldWidget(
+          text: 'Phone number:',
+          type: TextInputType.number,
+        ),
+        const Padding(padding: EdgeInsets.only(top: 10)),
+        TextFieldWidget(
+          text: '',
+          type: TextInputType.text,
+        ),
+        const Padding(padding: EdgeInsets.only(top: 10)),
+        TextFieldWidget(
+          text: '',
+          type: TextInputType.text,
+        ),
+        const Padding(padding: EdgeInsets.only(top: 10)),
+        TextFieldWidget(
+          text: '',
+          type: TextInputType.text,
+        ),
+        const Padding(padding: EdgeInsets.only(top: 10)),
+        Container(
+          height: 125,
+          width: MediaQuery.of(context).size.width * 0.8,
+          color: Colors.white,
+        ),
+        const Padding(padding: EdgeInsets.only(top: 23)),
+        GetBuilder<CartController>(builder: (controller) {
+          return GestureDetector(
+            onTap: () {
+              controller.onClick();
+              print('aaaaaaaaaaa');
+            },
+            child: Container(
+                width: 100,
+                height: 25,
+                color: Color(0xffEB671B),
+                child: Center(
+                    child: Text(
+                  'Confirm order',
+                  style: TextStyle(color: Colors.white),
+                ))),
+          );
+        }),
+        const Padding(padding: EdgeInsets.only(top: 10)),
+      ]),
+    );
   }
 }

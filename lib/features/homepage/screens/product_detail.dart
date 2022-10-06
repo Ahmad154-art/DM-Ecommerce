@@ -33,21 +33,11 @@ class _ProductDetailState extends State<ProductDetail> {
     super.dispose();
   }
 
-  // void loadplayer() {
-  //   controller = VideoPlayerController.asset('video/video_production1.mp4');
-  //   controller.addListener(() {
-  //     setState(() {});
-  //   });
-  //   controller.initialize().then((value) {
-  //     setState(() {});
-  //   });
-  // }
+  
 
   @override
   Widget build(BuildContext context) {
-    // return Center(
-    //   child: VideoPlayer(controller),
-    // );
+    
     return Scaffold(
       backgroundColor: Color(0xffeeeeee),
       drawer: CustomDrawer(),
@@ -81,7 +71,7 @@ class _ProductDetailState extends State<ProductDetail> {
                 padding: const EdgeInsets.all(12.0),
                 child: Text(
                   'Price:500\$',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  style: TextStyle(color: Colors.white, fontSize: 20,fontWeight: FontWeight.bold),
                 ),
               )
             ]),

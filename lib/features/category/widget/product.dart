@@ -12,7 +12,8 @@ class ProductWidget extends StatelessWidget {
         alignment: Alignment.center,
         child: Text(
           'Category Name',
-          style: TextStyle(color: Colors.white, fontSize: 18),
+          style: TextStyle(
+              color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
         ),
         decoration: BoxDecoration(
             boxShadow: [

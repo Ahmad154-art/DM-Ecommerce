@@ -1,10 +1,10 @@
-import 'package:ecommerce/features/homepage/contoller/imageslide.dart';
+import 'package:ecommerce/features/homepage/contoller/home_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Slide extends StatelessWidget {
-  ImageSlideController controller = Get.put(ImageSlideController());
+  HomeScreenController controller = Get.put(HomeScreenController());
   // int? index;
   String name;
   String image;

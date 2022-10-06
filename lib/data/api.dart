@@ -183,7 +183,7 @@ class DummyData {
     Random r = Random();
     int n = r.nextInt(100);
 
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 7));
     if (false) {
       throw new Exception("Error Getting product");
     } else
@@ -205,6 +205,135 @@ class DummyData {
             "name": "Headphones",
             "image": "image/wallpaperflare.com_wallpaper (1).jpg"
           },
+        ]
+      };
+  }
+
+  static Future<Map<String, Object>> getproduct() async {
+    Random r = Random();
+    int n = r.nextInt(100);
+
+    await Future.delayed(Duration(seconds: 7));
+    if (false) {
+      throw new Exception("Error Getting product");
+    } else
+      return {
+        "product": [
+          {
+            "id": 1,
+            "name": "Headphones",
+            "price": "200",
+            "image": "image/¦+¦+.jpg"
+          },
+          {
+            "id": 2,
+            "name": "Headphones",
+            "price": "200",
+            "image": "image/5 (2).jpg"
+          },
+          {
+            "id": 3,
+            "name": "Headphones",
+            "price": "200",
+            "image": "image/airpods1.jpg"
+          },
+          {
+            "id": 4,
+            "name": "Headphones",
+            "price": "200",
+            "image": "image/airpods3.png"
+          },
+          {
+            "id": 5,
+            "name": "Headphones",
+            "price": "200",
+            "image": "image/微信图片_20220426153928.jpg"
+          },
+        ]
+      };
+  }
+
+  static Future<Map<String, Object>> mostOrder() async {
+    Random r = Random();
+    int n = r.nextInt(100);
+
+    await Future.delayed(Duration(seconds: 7));
+    if (false) {
+      throw new Exception("Error Getting product");
+    } else
+      return {
+        "product": [
+          {
+            "id": 1,
+            "name": "Headphones",
+            "price": "20",
+            "image": "image/¦+¦+.jpg"
+          },
+          {
+            "id": 2,
+            "name": "Headphones",
+            "price": "500",
+            "image": "image/5 (2).jpg"
+          },
+          {
+            "id": 3,
+            "name": "Headphones",
+            "price": "1",
+            "image": "image/airpods1.jpg"
+          },
+          {
+            "id": 4,
+            "name": "Headphones",
+            "price": "1000",
+            "image": "image/airpods3.png"
+          },
+          {
+            "id": 5,
+            "name": "Headphones",
+            "price": "1000",
+            "image": "image/airpods3.png"
+          },
+        ]
+      };
+  }
+
+  static Future<Map<String, Object>> categoryName() async {
+    Random r = Random();
+    int n = r.nextInt(100);
+
+    await Future.delayed(Duration(seconds: 7));
+    if (false) {
+      throw new Exception("Error Getting product");
+    } else
+      return {
+        "product": [
+          {
+            "id": 1,
+            "name": "Headphones",
+            "price": "20",
+            "image": "image/¦+¦+.jpg"
+          },
+          {
+            "id": 2,
+            "name": "Headphones",
+            "price": "500",
+            "image": "image/5 (2).jpg"
+          },
+          {
+            "id": 3,
+            "name": "Headphones",
+            "price": "1",
+            "image": "image/airpods1.jpg"
+          },
+          {
+            "id": 4,
+            "name": "Headphones",
+            "price": "1",
+            "image": "image/airpods1.jpg"
+          },
+          
+          
+         
         ]
       };
   }

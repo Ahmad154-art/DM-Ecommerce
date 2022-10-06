@@ -1,7 +1,11 @@
+import 'package:ecommerce/features/favorite/controller/favorite.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class ProductFavoriteWidget extends StatelessWidget {
+  FavoriteScreenController controller = Get.put(FavoriteScreenController());
+  // bool ispressed = false;
   // TODO: Should accpet Product.
   ProductFavoriteWidget({
     Key? key,
@@ -60,7 +64,7 @@ class ProductFavoriteWidget extends StatelessWidget {
                 Padding(padding: EdgeInsets.only(top: 5)),
                 Text('$name'),
                 Text('$price\$'),
-              const  Padding(padding: EdgeInsets.only(top: 7)),
+                const Padding(padding: EdgeInsets.only(top: 7)),
                 Text(
                   '$description',
                   maxLines: 3,
@@ -73,16 +77,30 @@ class ProductFavoriteWidget extends StatelessWidget {
             ),
           ),
         ),
-        IconButton(
-            // TODO: should be triggered.
-            onPressed: () {
-              
-            },
-            icon: SvgPicture.asset(
-              'icons/Heart-fill.svg',
-              color: Color(0xffEB671B),
-            )),
+        Obx(() {
+          return IconButton(
+              // TODO: should be triggered.
+              onPressed: () {
+                controller.onClick(index);
+                print('aaaaaaaaaaa');
+              },
+              icon: controller.favorite.value == true
+                  ? SvgPicture.asset(
+                      'icons/Heart-fill.svg',
+                      color: Color(0xffEB671B),
+                    )
+                  : SvgPicture.asset(
+                      'icons/Heart.svg',
+                      color: Color(0xffEB671B),
+                    ));
+        })
       ])
     ]);
   }
+
+  // bool favorite = true;
+  // void onpress() {
+  //   favorite = !favorite;
+  //   print(favorite);
+  // }
 }

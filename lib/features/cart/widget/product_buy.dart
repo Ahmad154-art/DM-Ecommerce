@@ -19,7 +19,7 @@ class ProductBuy extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Container(
-        margin: EdgeInsets.only(left: 30),
+        margin: EdgeInsets.only(left: 30,top: 10),
         decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
@@ -35,7 +35,7 @@ class ProductBuy extends StatelessWidget {
         //color: Colors.amber,
       ),
       Stack(alignment: Alignment.topRight, children: [
-        Container(
+        Container(margin: EdgeInsets.only(top: 10),
             child: Padding(
               padding: EdgeInsets.only(top: 15, left: 5),
               child: Column(
