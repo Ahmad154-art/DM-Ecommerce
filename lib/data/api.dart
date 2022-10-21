@@ -183,7 +183,7 @@ class DummyData {
     Random r = Random();
     int n = r.nextInt(100);
 
-    await Future.delayed(Duration(seconds: 7));
+    await Future.delayed(Duration(seconds: 2));
     if (false) {
       throw new Exception("Error Getting product");
     } else
@@ -215,7 +215,7 @@ class DummyData {
 
     await Future.delayed(Duration(seconds: 7));
     if (false) {
-      throw new Exception("Error Getting product");
+      throw Exception("Error Getting product");
     } else
       return {
         "product": [
@@ -331,9 +331,37 @@ class DummyData {
             "price": "1",
             "image": "image/airpods1.jpg"
           },
-          
-          
-         
+        ]
+      };
+  }
+
+  static Future<Map<String, Object>> category() async {
+    Random r = Random();
+    int n = r.nextInt(100);
+
+    await Future.delayed(Duration(seconds: 1));
+    if (false) {
+      throw new Exception("Error Getting product");
+    } else
+      return {
+        "category": [
+          {"id": 1, "name": "Headphones", "image": "image/adds3.jpg"},
+          {
+            "id": 2,
+            "name": "Headphones",
+            "image": "image/fausto-sandoval-w5m3PIGvkqI-unsplash.jpg"
+          },
+          {
+            "id": 3,
+            "name": "Headphones",
+            "image": "image/wallpaperflare.com_wallpaper.jpg"
+          },
+          {"id": 4, "name": "Headphones", "image": "image/adds3.jpg"},
+          {
+            "id": 5,
+            "name": "Headphones",
+            "image": "image/wallpaperflare.com_wallpaper (1).jpg"
+          },
         ]
       };
   }

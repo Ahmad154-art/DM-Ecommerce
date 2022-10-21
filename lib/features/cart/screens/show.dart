@@ -1,7 +1,7 @@
 import 'package:ecommerce/features/cart/controller/orderlist.dart';
 import 'package:ecommerce/features/cart/widget/orderlist.dart';
 
-import '../../../controller/cart_controller.dart';
+import '../controller/cart_controller.dart';
 import '../widget/product_buy.dart';
 import 'cart.dart';
 import 'fill_form.dart';

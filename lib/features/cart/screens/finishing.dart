@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import '../../../controller/cart_controller.dart';
+import '../controller/cart_controller.dart';
 
 class FinishingTheOrder extends StatelessWidget {
   @override

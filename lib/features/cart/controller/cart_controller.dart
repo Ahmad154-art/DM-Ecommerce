@@ -1,5 +1,5 @@
-import '../features/cart/screens/fill_form.dart';
-import '../features/cart/screens/show.dart';
+import '../screens/fill_form.dart';
+import '../screens/show.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,5 +1,5 @@
 import '../../../component/drawer.dart';
-import '../../../controller/cart_controller.dart';
+import '../controller/cart_controller.dart';
 import 'fill_form.dart';
 import 'finishing.dart';
 import 'show.dart';

@@ -1,3 +1,7 @@
+import 'package:ecommerce/features/category/screens/category_details.dart';
+import 'package:ecommerce/features/homepage/contoller/home_controller.dart';
+import 'package:get/get.dart';
+
 import 'component/navigationbar.dart';
 
 import 'features/cart/screens/finishing.dart';
@@ -9,15 +13,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Get.put(HomeScreenController());
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -33,15 +38,17 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: CustomNavigationBar(),
-     // initialRoute: '/splash',
+      // initialRoute: '/splash',
       debugShowCheckedModeBanner: false,
+
       getPages: [
-         GetPage(name: '/splash', page: ()=>SplashScreen()),
-         GetPage(name: '/home', page: ()=>Home()),
-        GetPage(name: '/favorite', page: ()=>Favorite()),
-         GetPage(name: '/product_detail', page: ()=>ProductDetail()),
-         GetPage(name: '/finishing_the_order', page: ()=>FinishingTheOrder()),
-         GetPage(name: '/navigation_bar', page: ()=>CustomNavigationBar()),
+        GetPage(name: '/splash', page: () => SplashScreen()),
+        GetPage(name: '/home', page: () => Home()),
+        GetPage(name: '/favorite', page: () => Favorite()),
+        GetPage(name: '/product_detail', page: () => ProductDetail()),
+        GetPage(name: '/finishing_the_order', page: () => FinishingTheOrder()),
+        GetPage(name: '/navigation_bar', page: () => CustomNavigationBar()),
+        // GetPage(name: '/category_detail', page: ()=>CategoryDetail())
       ],
     );
   }

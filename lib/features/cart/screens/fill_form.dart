@@ -2,7 +2,7 @@ import 'package:ecommerce/features/cart/screens/finishing.dart';
 import 'package:ecommerce/features/cart/widget/fill_form.dart';
 
 import '../../../component/drawer.dart';
-import '../../../controller/cart_controller.dart';
+import '../controller/cart_controller.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

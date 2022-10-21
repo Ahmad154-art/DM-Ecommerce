@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:ecommerce/common/widget/circularprogress.dart';
 import 'package:ecommerce/component/customappbar.dart';
 import 'package:ecommerce/component/drawer.dart';
 import 'package:ecommerce/features/homepage/contoller/home_controller.dart';
@@ -12,16 +13,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Home extends StatelessWidget {
-  HomeScreenController controller = Get.put(HomeScreenController());
-  
+  // HomeScreenController controller = Get.put(HomeScreenController());
+  HomeScreenController controller = Get.find<HomeScreenController>();
+
   @override
   Widget build(BuildContext context) {
     controller.getNewProduct();
-    controller.reload();
+    //controller.reload();
     controller.mostorder();
     controller.categoryName();
     // controller.slide();
-    return RefreshIndicator(color: Color(0xffEB671B),
+    return RefreshIndicator(
+      color: Color(0xffEB671B),
       onRefresh: refresh,
       child: Scaffold(
         backgroundColor: Color(0xffeeeeee),
@@ -40,47 +43,53 @@ class Home extends StatelessWidget {
                 // TODO:build in a seperated widget. //*****Done */
                 SearchBar(),
                 ImageSlider(),
-    
+
                 const Padding(padding: EdgeInsets.only(top: 10)),
                 // TODO: seperate in other widget. //******Done */
                 ProductSection(
                   title: 'New Collection',
                 ),
-    
+
                 const Padding(padding: EdgeInsets.only(top: 10)),
-    
-               
+
                 Row(children: [
                   Expanded(
                     child: SizedBox(
                         height: MediaQuery.of(context).size.height * 0.23,
                         child: Obx(() {
-                          if (controller.isLoading2.isTrue) {
+                          if (controller.myClass1.isLoading.isFalse) {
+                            if (controller.myClass1.hasError.isFalse) {
+                              if (controller.myClass1.result!.isEmpty) {
+                                return Center(
+                                  child: Text('no data found'),
+                                );
+                              }
+                              return ListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  itemCount: controller.myClass1.result!.length,
+                                  itemBuilder: (BuildContext context, index) {
+                                    return ProductItemWidget(Product(
+                                        image: controller
+                                            .myClass1.result![index].image,
+                                        title: controller
+                                            .myClass1.result![index].name,
+                                        price: double.parse(controller
+                                            .myClass1.result![index].price)));
+                                  });
+                            }
                             return Center(
-                              child: CircularProgressIndicator(
-                                color: Color(0xffEB671B),
-                              ),
+                              child: GestureDetector(
+                                  onTap: () {
+                                    controller.getNewProduct();
+                                  },
+                                  child: Text('retry')),
                             );
                           }
-                          return GetBuilder<HomeScreenController>(
-                              builder: (controller) {
-                            return ListView.builder(
-                                scrollDirection: Axis.horizontal,
-                                itemCount: controller.products.length,
-                                itemBuilder: (BuildContext context, index) {
-                                  return ProductItemWidget(Product(
-                                      image:
-                                          "${controller.products[index].image}",
-                                      title: "${controller.products[index].name}",
-                                      price: double.parse(
-                                          controller.products[index].price)));
-                                });
-                          });
+                          return const CircularProgressIndicatorWidget();
                         })),
                   ),
                 ]),
-    
-               
+
                 // TODO: Just like see more.////******Done */
                 const Padding(padding: EdgeInsets.only(top: 25)),
                 Container(
@@ -90,37 +99,46 @@ class Home extends StatelessWidget {
                 ),
                 const Padding(padding: EdgeInsets.only(top: 25)),
                 ProductSection(title: 'Most ordered'),
-    
+
                 const Padding(padding: EdgeInsets.only(top: 10)),
                 Row(children: [
                   Expanded(
                     child: SizedBox(
                         height: MediaQuery.of(context).size.height * 0.23,
                         child: Obx(() {
-                          if (controller.isLoading3.isTrue) {
+                          if (controller.myClass2.isLoading.isFalse) {
+                            if (controller.myClass2.hasError.isFalse) {
+                              if (controller.myClass2.result!.isEmpty) {
+                                return Center(
+                                  child: Text('no data found'),
+                                );
+                              }
+                              return ListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  itemCount: controller.myClass2.result!.length,
+                                  itemBuilder: (BuildContext context, index) {
+                                    return ProductItemWidget(Product(
+                                        image:
+                                            "${controller.myClass2.result![index].image}",
+                                        title:
+                                            "${controller.myClass2.result![index].name}",
+                                        price: double.parse(controller
+                                            .myClass2.result![index].price)));
+                                  });
+                            }
                             return Center(
-                              child: CircularProgressIndicator(
-                                color: Color(0xffEB671B),
-                              ),
+                              child: GestureDetector(
+                                  onTap: () {
+                                    controller.mostorder();
+                                  },
+                                  child: Text('retry')),
                             );
                           }
-                          return GetBuilder<HomeScreenController>(
-                              builder: (controller) {
-                            return ListView.builder(
-                                scrollDirection: Axis.horizontal,
-                                itemCount: controller.orders.length,
-                                itemBuilder: (BuildContext context, index) {
-                                  return ProductItemWidget(Product(
-                                      image: "${controller.orders[index].image}",
-                                      title: "${controller.orders[index].name}",
-                                      price: double.parse(
-                                          controller.orders[index].price)));
-                                });
-                          });
+                          return const CircularProgressIndicatorWidget();
                         })),
                   ),
                 ]),
-               
+
                 const Padding(padding: EdgeInsets.only(top: 25)),
                 // TODO: Just like see more.//*****Done */
                 Container(
@@ -130,38 +148,45 @@ class Home extends StatelessWidget {
                 ),
                 const Padding(padding: EdgeInsets.only(top: 25)),
                 ProductSection(title: 'Category Name'),
-    
+
                 const Padding(padding: EdgeInsets.only(top: 10)),
                 Row(children: [
                   Expanded(
                     child: SizedBox(
                         height: MediaQuery.of(context).size.height * 0.23,
                         child: Obx(() {
-                          if (controller.isLoading4.isTrue) {
+                          if (controller.myClass3.isLoading.isFalse) {
+                            if (controller.myClass3.hasError.isFalse) {
+                              if (controller.myClass3.result!.isEmpty) {
+                                return Center(
+                                  child: Text('no data found'),
+                                );
+                              }
+                              return ListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  itemCount: controller.myClass3.result!.length,
+                                  itemBuilder: (BuildContext context, index) {
+                                    return ProductItemWidget(Product(
+                                        image: controller
+                                            .myClass3.result![index].image,
+                                        title: controller
+                                            .myClass3.result![index].name,
+                                        price: double.parse(controller
+                                            .myClass3.result![index].price)));
+                                  });
+                            }
                             return Center(
-                              child: CircularProgressIndicator(
-                                color: Color(0xffEB671B),
-                              ),
+                              child: GestureDetector(
+                                  onTap: () {
+                                    controller.categoryName();
+                                  },
+                                  child: Text('error')),
                             );
                           }
-                          return GetBuilder<HomeScreenController>(
-                              builder: (controller) {
-                            return ListView.builder(
-                                scrollDirection: Axis.horizontal,
-                                itemCount: controller.category.length,
-                                itemBuilder: (BuildContext context, index) {
-                                  return ProductItemWidget(Product(
-                                      image:
-                                          "${controller.category[index].image}",
-                                      title: "${controller.category[index].name}",
-                                      price: double.parse(
-                                          controller.category[index].price)));
-                                });
-                          });
+                          return const CircularProgressIndicatorWidget();
                         })),
                   ),
                 ]),
-                
               ],
             ),
           ),
@@ -170,10 +195,12 @@ class Home extends StatelessWidget {
       ),
     );
   }
-  Future<void> refresh()async{
-   await controller.getNewProduct();
-   // controller.reload();
-  await  controller.mostorder();
-   await controller.categoryName();
+
+  Future<void> refresh() async {
+    controller.slide();
+    controller.getNewProduct();
+    //  await controller.reload();
+    controller.mostorder();
+    controller.categoryName();
   }
 }
